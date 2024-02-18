@@ -1,5 +1,12 @@
 # Hackathon Backend application
 
+## Requirnments 
+
+- Your Brain
+- Node version: **v21.5.0**
+- npm version: **10.2.4**
+- Install nodoemon globally: **npm i nodemon -g**
+
 
 ## JSON Response
 
@@ -27,6 +34,8 @@
 }
 // status code: 500 (Internal server error)
 ```
+
+***Make sure to check the <u>status code</u> before you destructure the API Response***
 
 
 ## Environment variables
