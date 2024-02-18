@@ -52,3 +52,12 @@
 - Install all the dependecies: **npm i**.
 - create a **.env** file and save the [environment variables](#environment-variables)
 - Run the application: **npm run dev**
+
+
+## Endpoints
+
+### Auth Testing route
+
+Once you run the application, try this endpoint to see if things are working.
+
+> http://localhost:8000/api/auth/test
