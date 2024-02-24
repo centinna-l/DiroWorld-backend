@@ -12,9 +12,10 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-const { authRoutes } = require("./routes");
+const { authRoutes, llmRoutes } = require("./routes");
 
 app.use("/api", authRoutes);
+app.use("/api", llmRoutes);
 
 app.use((err, req, res, next) => {
   return res.status(400).json({ error: err.message });
