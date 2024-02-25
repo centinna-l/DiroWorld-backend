@@ -1,5 +1,6 @@
 const { ObjectId } = require("mongodb");
-const { createPrompt } = require("../database");
+const { createPrompt, fetchById } = require("../database");
+const { cleanPrompt } = require("../helpers");
 
 const generateID = async (req, res, next) => {
   try {
@@ -50,10 +51,26 @@ const generateIDTest = async (req, res, next) => {
     if (!result.status) {
       next(Error(result.message));
     }
+    let clean_prompt = cleanPrompt(result.data.data);
     return res.json({
       id,
-      message: result.data.data,
-      options: [name, age, interests],
+      message: clean_prompt.prompt.join(),
+      options: clean_prompt.options,
+    });
+  } catch (error) {
+    return res.json({ error: error.message });
+  }
+};
+
+const fetchPromptController = async (req, res, next) => {
+  try {
+    const { id } = req.body;
+    let prompt = await fetchById(id);
+    if (!prompt.status) {
+      next(Error(prompt.error));
+    }
+    return res.json({
+      data: prompt.data,
     });
   } catch (error) {
     return res.json({ error: error.message });
@@ -63,4 +80,5 @@ const generateIDTest = async (req, res, next) => {
 module.exports = {
   generateID,
   generateIDTest,
+  fetchPromptController,
 };

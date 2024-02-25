@@ -27,6 +27,23 @@ const createPrompt = async (id, name, age, interests) => {
   }
 };
 
+const fetchById = async (id) => {
+  try {
+    let prompt = await Prompt.findOne({ prompt_id: id });
+    if (!prompt) {
+      return {
+        status: false,
+        error: "Prompt not Found, try playing the game again",
+        data: null,
+      };
+    }
+    return { status: true, error: null, data: prompt };
+  } catch (error) {
+    return { status: false, error: error.message, data: null };
+  }
+};
+
 module.exports = {
   createPrompt,
+  fetchById,
 };
