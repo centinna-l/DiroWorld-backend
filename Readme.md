@@ -1,63 +1,15 @@
-# Hackathon Backend application
+# Diro's World
+> Winner of HackDIRO Université de Montreal
 
-## Requirnments 
+A never-ending fantasy world role-playing game (RPG) that is personalized to you and your interests. Powered by Artificial Intelligence.
 
-- Your Brain
-- Node version: **v21.5.0**
-- npm version: **10.2.4**
-- Install nodoemon globally: **npm i nodemon -g**
+![diro-world](https://res.cloudinary.com/dm0kkwirn/image/upload/v1708908101/portfolio/projects/lpmtg6umvftbqpbni2ry.gif)
 
+### Tech Stack
+- [React](https://github.com/aryanxarora/Diro-World)
+- [Backend](https://github.com/centinna-l/DiroWorld-backend)
+- [Model](https://github.com/Mozilla-Ocho/llamafile)
 
-## JSON Response
+### Meet the team
 
-
-> API Endpoint response.
-
-
-```js
-
-{
-    message: "Response Message"
-    data: {}
-}
-// status code: 200,201, 400,404
-
-```
-
-> API Error Response
-
-```js
-
-{
-    error: "Error Message",
-    data: null
-}
-// status code: 500 (Internal server error)
-```
-
-***Make sure to check the <u>status code</u> before you destructure the API Response***
-
-
-## Environment variables
-
-> MONGODB_URL=mongodb+srv://dbUser:jerry@cluster0.lwj0c.gcp.mongodb.net/?retryWrites=true&w=majority
-
-> JWT_SECRETE=123ecdvreC*&&(())
-
-> PORT=8000
-
-## How to run
-
-- clone the repo
-- Install all the dependecies: **npm i**.
-- create a **.env** file and save the [environment variables](#environment-variables)
-- Run the application: **npm run dev**
-
-
-## Endpoints
-
-### Auth Testing route
-
-Once you run the application, try this endpoint to see if things are working.
-
-> http://localhost:8000/api/auth/test
+![Developer Team](./team.png)
