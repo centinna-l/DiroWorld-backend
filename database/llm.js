@@ -43,7 +43,27 @@ const fetchById = async (id) => {
   }
 };
 
+const updatePromptByID = async (id, data) => {
+  try {
+    let result = await Prompt.findOneAndUpdate({
+      prompt_id: id,
+      data: { $set: data },
+    });
+    if (!result) {
+      return {
+        status: false,
+        error: "update prompt - Not able to update the prompt",
+        data: null,
+      };
+    }
+    return { status: true, error: null, data: result };
+  } catch (error) {
+    return { status: false, error: error.message, data: null };
+  }
+};
+
 module.exports = {
   createPrompt,
   fetchById,
+  updatePromptByID,
 };

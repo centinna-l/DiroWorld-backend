@@ -3,7 +3,7 @@ const { ObjectId } = mongoose.Schema;
 const promptSchema = mongoose.Schema(
   {
     prompt_id: { type: String },
-    data: { type: String },
+    data: [{ type: mongoose.Schema.Types.Mixed }],
   },
   { timestamps: true }
 );

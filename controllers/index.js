@@ -5,6 +5,9 @@ const {
   generateID,
   generateIDTest,
   fetchPromptController,
+  textMeController,
+  dummyController,
+  quitController,
 } = require("./llm_controller");
 
 module.exports = {
@@ -13,4 +16,7 @@ module.exports = {
   generateID,
   generateIDTest,
   fetchPromptController,
+  textMeController,
+  dummyController,
+  quitController,
 };
